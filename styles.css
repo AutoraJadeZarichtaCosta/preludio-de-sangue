@@ -1,0 +1,1888 @@
+/* ==================================================
+   RESET BÁSICO
+   ================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: #f7f6f3;
+  color: #1f1f1f;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+/* ==================================================
+   CONTAINERS
+   ================================================== */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/* ==================================================
+   TIPOGRAFIA BASE
+   ================================================== */
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 5vw, 3.6rem);
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Mobile: evita justificado feio */
+@media (max-width: 768px) {
+  p {
+    text-align: left;
+  }
+}
+
+/* ==================================================
+   CORES — SISTEMA DO SITE
+   ================================================== */
+
+:root {
+  --bg-light: #f7f6f3;
+  --bg-dark: #002211;
+
+  --card-light: #f3f2ee;
+
+  --text-dark: #1f1f1f;
+  --text-light: #ffffff;
+}
+
+/* ==================================================
+   SEÇÕES
+   ================================================== */
+
+.section.light {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.section.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* ==================================================
+   BOTÕES — BASE ÚNICA
+   ================================================== */
+
+.btn,
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+
+  font-family: 'Lora', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  background-color: var(--bg-light);
+  color: #002211;
+
+  border: 1.5px solid #002211;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #eef0ea;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ==================================================
+   DIVISOR EDITORIAL
+   ================================================== */
+
+.section-divider {
+  width: 60px;
+  height: 1px;
+  background-color: rgba(0,0,0,0.25);
+  margin: 2.5rem auto;
+}
+
+/* ==================================================
+   HELPERS
+   ================================================== */
+
+.centered {
+  text-align: center;
+}
+
+.centered p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/* ==================================================
+   PERSONAGENS — SISTEMA UNIFICADO
+   ================================================== */
+
+/* ---------- SEÇÃO ---------- */
+
+.characters-section {
+  background: #f7f6f3;
+}
+
+/* subtítulo da seção */
+.characters-section .section-subtitle {
+  max-width: 720px;
+  margin: 2rem auto 4rem;
+  text-align: center;
+}
+
+.characters-section .section-subtitle p {
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* ==================================================
+   GRID — NARRADORES (CARDS GRANDES)
+   ================================================== */
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* ==================================================
+   GRID — PERSONAGENS SECUNDÁRIOS
+   ================================================== */
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.2rem;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  place-items: center;
+}
+
+/* ==================================================
+   CARD — BASE (VALE PARA TODOS)
+   ================================================== */
+
+.character-card,
+.narrator-card {
+  background-color: var(--card-light);
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.character-card:hover,
+.narrator-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* ==================================================
+   IMAGEM
+   ================================================== */
+
+.character-card img,
+.narrator-card img {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* ==================================================
+   TEXTO — HIERARQUIA
+   ================================================== */
+
+.character-card h3,
+.narrator-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 1.4rem 0 0.6rem;
+}
+
+.character-role,
+.narrator-card .subtitle {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 1.2rem;
+}
+
+.character-description,
+.character-card p,
+.narrator-card p {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 220px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ==================================================
+   QUOTE DO PERSONAGEM
+   ================================================== */
+
+.character-card blockquote,
+.narrator-card .quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.6;
+  opacity: 0.85;
+
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(0,0,0,0.15);
+}
+
+/* ==================================================
+   AJUSTES VISUAIS — PERSONAGENS SECUNDÁRIOS
+   ================================================== */
+
+.character-grid .character-card {
+  background: transparent;
+  box-shadow: none;
+  padding: 1.5rem 1rem;
+}
+
+.character-grid .character-card img {
+  max-width: 140px;
+}
+
+.character-grid .character-card p {
+  font-size: 0.9rem;
+}
+
+/* ==================================================
+   MOBILE — PERSONAGENS
+   ================================================== */
+
+@media (max-width: 768px) {
+  .character-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-card img,
+  .narrator-card img {
+    max-width: 100px;
+  }
+
+  .character-card p,
+  .narrator-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ==================================================
+   NAVBAR — SISTEMA FINAL LIMPO
+   ================================================== */
+
+/* Espaço para navbar fixa */
+body {
+  padding-top: 88px;
+}
+
+/* ---------- CONTAINER ---------- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #f7f6f3;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+/* ---------- MARCA ---------- */
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap;
+}
+
+/* ---------- MENU ---------- */
+
+.navbar-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.navbar-menu a:hover {
+  opacity: 1;
+}
+
+/* ---------- AÇÕES (BOTÕES) ---------- */
+
+.navbar-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.navbar .btn-primary,
+.navbar .btn-secondary {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* ---------- LINKS PRETOS + EFEITO ---------- */
+
+.navbar a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #555555;
+}
+
+
+/* ==================================================
+   MOBILE — NAVBAR
+   ================================================== */
+
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 120px; /* navbar fica mais alta no mobile */
+  }
+
+  .navbar-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .navbar-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ==================================================
+   AUTORA — SISTEMA UNIFICADO
+   ================================================== */
+
+/* ---------- SEÇÃO ---------- */
+
+.author-section {
+  text-align: center;
+}
+
+/* ---------- CARD ---------- */
+
+.author-card {
+  max-width: 760px;
+  margin: 3rem auto 0;
+
+  background-color: var(--card-light);
+  border-radius: 24px;
+  padding: 4rem 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+/* ---------- FOTO ---------- */
+
+.author-photo {
+  margin-bottom: 2.5rem;
+}
+
+.author-photo img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- TEXTO ---------- */
+
+.author-name {
+  margin-bottom: 2rem;
+}
+
+.author-card p {
+  max-width: 600px;
+  margin: 0 auto 1.6rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ---------- LINKS ---------- */
+
+.author-card a {
+  color: #002211;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.author-card a:hover {
+  text-decoration: underline;
+}
+
+/* ==================================================
+   REDES SOCIAIS — AUTORA
+   ================================================== */
+
+.author-social {
+  margin-top: 2.2rem;
+  text-align: center;
+}
+
+.author-social span {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  margin-bottom: 0.8rem;
+}
+
+.author-social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.author-social-btn {
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+
+  background-color: var(--card-light);
+  color: #002211;
+
+  border: 1.5px solid #002211;
+  text-decoration: none;
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.author-social-btn:hover {
+  background-color: #e9e7e1;
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   MOBILE — AUTORA
+   ================================================== */
+
+@media (max-width: 480px) {
+  .author-card {
+    padding: 3rem 1.8rem;
+  }
+
+  .author-photo img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* ==================================================
+   QUOTE — SISTEMA UNIFICADO
+   ================================================== */
+
+.quote-section {
+  background-color: #002415;      /* verde escuro */
+  padding: 6rem 0 7rem;
+}
+
+.quote-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+  color: #f7f6f3;
+}
+
+/* Texto da frase */
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Divisor (✦) */
+.quote-divider {
+  margin: 2.2rem 0;
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+
+/* Espaço antes da próxima seção */
+.quote-section + section {
+  padding-top: 5rem;
+}
+
+/* ==================================================
+   MOBILE — QUOTE
+   ================================================== */
+
+@media (max-width: 768px) {
+  .quote-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+}
+
+/* ==================================================
+   HERO — SISTEMA UNIFICADO
+   ================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 1rem;
+  text-align: center;
+}
+
+/* ---------- FUNDO ---------- */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 246, 243, 0.82);
+  z-index: 1;
+}
+
+/* ---------- CONTEÚDO ---------- */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---------- AUTORA ---------- */
+
+.hero-author {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 1.2rem;
+  opacity: 0.85;
+}
+
+/* ---------- TÍTULO ---------- */
+
+.hero-title,
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  line-height: 1.1;
+  margin-bottom: 1.8rem;
+}
+
+/* ---------- FRASE / SUBTÍTULO ---------- */
+
+.hero-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+  opacity: 0.85;
+}
+
+/* ---------- BOTÕES ---------- */
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- FRASE NARRATIVA ---------- */
+
+.hero-narrative {
+  max-width: 720px;
+  margin: 4rem auto 0;
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  opacity: 0.85;
+  text-align: center;
+}
+
+/* ---------- ESPAÇAMENTO ---------- */
+
+.hero-buttons {
+  margin-top: 2rem;
+}
+
+
+/* ==================================================
+   MOBILE — HERO
+   ================================================== */
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 6rem 1rem;
+  }
+
+  .hero-title {
+    white-space: normal;
+  }
+
+  .hero-quote {
+    font-size: 1.15rem;
+    margin-bottom: 2.8rem;
+  }
+}
+
+/* ==================================================
+   TAGS DO LIVRO — SISTEMA UNIFICADO
+   ================================================== */
+
+/* Container opcional do texto + tags */
+.book-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Grupo de tags */
+.book-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2.5rem;
+}
+
+/* Tag individual */
+.tag {
+  display: inline-block;
+  padding: 0.45rem 1.1rem;
+
+  font-family: 'Lora', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+
+  border-radius: 999px;
+
+  background-color: rgba(0, 34, 17, 0.08);
+  color: #002211;
+  border: 1px solid rgba(0, 34, 17, 0.3);
+}
+
+/* ==================================================
+   MOBILE — TAGS
+   ================================================== */
+
+@media (max-width: 480px) {
+  .tag {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+
+/* ==================================================
+   UNIVERSO — MAPA E DESCRIÇÃO (SISTEMA UNIFICADO)
+   ================================================== */
+
+/* ---------- SEÇÃO ---------- */
+
+.universe-section {
+  text-align: center;
+}
+
+/* ---------- TÍTULO ---------- */
+
+.continent-title {
+  color: #002211;
+  text-align: center;
+}
+
+/* ---------- DESCRIÇÃO ---------- */
+
+.universe-section .section-description {
+  max-width: 720px;
+  margin: 2rem auto 4rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Garante que o texto não herde justificado */
+.universe-section .section-description p {
+  text-align: center;
+}
+
+/* ---------- MAPA ---------- */
+
+.universe-map {
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto 0;
+}
+
+.universe-map img {
+  width: 100%;
+  max-width: 900px;      /* tamanho grande, seguro */
+  height: auto;
+  border-radius: 16px;
+}
+
+/* ==================================================
+   MOBILE — MAPA
+   ================================================== */
+
+@media (max-width: 768px) {
+  .universe-map img {
+    max-width: 100%;
+  }
+}
+
+/* ==================================================
+   AVALIAÇÕES — SISTEMA UNIFICADO
+   ================================================== */
+
+/* ---------- GRID ---------- */
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* ---------- CARD ---------- */
+
+.review-card {
+  background-color: var(--card-light);
+  padding: 2.5rem;
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* ---------- CONTEÚDO ---------- */
+
+.review-stars {
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.review-meta {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ---------- LINK ---------- */
+
+.review-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-size: 0.75rem;
+  color: #002211;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.review-link:hover {
+  text-decoration: underline;
+}
+
+/* ==================================================
+   REVIEW LONGA — EXPANSÍVEL
+   ================================================== */
+
+.review-details {
+  margin-top: 1.2rem;
+}
+
+.review-summary {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  list-style: none;
+}
+
+.review-summary::after {
+  content: " Ler review completa ↓";
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.review-details[open] .review-summary::after {
+  content: " Ocultar review ↑";
+}
+
+.review-details p {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+/* ==================================================
+   MOBILE — AVALIAÇÕES
+   ================================================== */
+
+@media (max-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card {
+    padding: 2rem 1.6rem;
+  }
+
+  .review-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* ==================================================
+   SOCIAL PROOF — ESTRELAS + TEXTO
+   ================================================== */
+
+.social-proof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+
+  margin-bottom: 3.5rem;
+}
+
+.social-proof .stars {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.social-proof .social-text {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  text-align: center;
+}
+
+/* ==================================================
+   FRASE FINAL (ANTES DO RODAPÉ)
+   ================================================== */
+
+.closing-line {
+  max-width: 720px;
+  margin: 0 auto 4rem;
+
+  padding: 0 1rem;
+  text-align: center;
+
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* ==================================================
+   FOOTER — DEFINITIVO
+   ================================================== */
+
+footer {
+  background-color: #002211;
+  color: var(--card-light);
+
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* ==================================================
+   MOBILE — RODAPÉ
+   ================================================== */
+
+@media (max-width: 480px) {
+  .closing-line {
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 1.6rem 1rem;
+  }
+}
+
+/* ==================================================
+   INTRO DO LIVRO — DEFINITIVO
+   ================================================== */
+
+.book-intro {
+  padding: 6rem 0;
+}
+
+.book-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Capa */
+.book-cover {
+  display: flex;
+  justify-content: center;
+}
+
+.book-cover img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Texto */
+.book-text {
+  max-width: 640px;
+}
+
+.book-text p {
+  margin-bottom: 1.2rem;
+}
+
+/* ======================
+   MOBILE
+   ====================== */
+
+@media (max-width: 768px) {
+  .book-intro {
+    padding: 4.5rem 0;
+  }
+
+  .book-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .book-text {
+    margin: 0 auto;
+  }
+
+  .book-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==================================================
+   ILUSTRAÇÕES — DEFINITIVO
+   ================================================== */
+
+.illustrations-section {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+/* Container das imagens */
+.characters-illustration {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+/* Imagens */
+.characters-illustration img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 14px;
+}
+
+/* Crédito */
+.illustration-credit {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ======================
+   MOBILE
+   ====================== */
+
+@media (max-width: 480px) {
+  .illustrations-section {
+    padding: 4.5rem 0;
+  }
+
+  .characters-illustration {
+    gap: 1.5rem;
+  }
+
+  .characters-illustration img {
+    max-width: 260px;
+  }
+}
+
+/* ==================================================
+   CTA — COMEÇE A LEITURA
+   ================================================== */
+
+.cta-reading {
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 6rem 1rem;
+  text-align: center;
+}
+
+.cta-reading h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* divisor sutil */
+.cta-reading h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: rgba(0,0,0,0.25);
+  margin: 1.2rem auto 0;
+}
+
+.cta-reading p {
+  max-width: 600px;
+  margin: 2.5rem auto 4rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.85;
+  text-align: center;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+/* ==================================================
+   CTA — ESCOLHA COMO LER
+   ================================================== */
+
+.buy-section {
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* subtítulo */
+.buy-section > p {
+  max-width: 520px;
+  margin-bottom: 2.2rem;
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+/* prova social */
+.social-proof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 3.5rem;
+}
+
+.social-proof .stars {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.social-proof .social-text {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* botões de compra */
+.buy-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+/* frase final */
+.buy-section .closing-line {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+@media (max-width: 480px) {
+  .cta-reading,
+  .buy-section {
+    padding: 4.5rem 1rem;
+  }
+
+  .cta-reading h2,
+  .buy-section h2 {
+    font-size: 2rem;
+  }
+
+  .cta-buttons,
+  .buy-buttons {
+    gap: 1.2rem;
+  }
+}
+
+/* ==================================================
+   REDES SOCIAIS — SEÇÃO DEFINITIVA
+   ================================================== */
+
+.social-section {
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Título */
+.social-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Texto de apoio */
+.social-section p {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* Container dos botões */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Botões sociais */
+.social-btn {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.85rem;
+
+  border-radius: 999px;
+  border: 1px solid #002211;
+  background: transparent;
+  color: #002211;
+
+  font-family: 'Lora', serif;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-btn:hover {
+  background-color: #002211;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .social-section {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .social-section h2 {
+    font-size: 1.9rem;
+  }
+
+  .social-section p {
+    font-size: 1rem;
+  }
+
+  .social-buttons {
+    gap: 1rem;
+  }
+}
+/* ==================================================
+   MOBILE — AJUSTES GLOBAIS
+   ================================================== */
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 17px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Evita scroll lateral */
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  section {
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding: 4rem 0;
+  }
+
+  /* Grids viram coluna única */
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Navbar */
+  .navbar-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .navbar-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ==================================================
+   MOBILE PEQUENO
+   ================================================== */
+
+@media (max-width: 480px) {
+
+  section {
+    padding: 4rem 0;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-btn {
+    width: 100%;
+    max-width: 240px;
+  }
+}
+
+/* ==================================================
+   Correção de botões
+   ================================================== */
+.btn-store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 2.2rem;
+  border-radius: 999px;
+
+  border: 1.5px solid #002211;
+  background-color: var(--bg-light);
+  color: #002211;
+
+  text-decoration: none;
+  gap: 0.25rem;
+}
+
+.btn-title {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+.btn-sub {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* ==================================================
+   Letra preta quando o fundo é branco - narradores
+   ================================================== */
+
+.character-card h3 {
+  color: #1f1f1f;
+}
+
+.character-card p {
+  color: #4a4a4a;
+}
+
+/* Quote dentro dos cards de personagens */
+.character-card blockquote {
+  color: #6b6b6b;
+  font-style: italic;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border: none;
+}
+
+/* Ajuste fino */
+.character-card blockquote {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==================================================
+   Reviews – contraste em cards claros
+   ================================================== */
+
+.review-card {
+  color: #1f1f1f;
+}
+
+.review-text {
+  color: #4a4a4a;
+}
+
+.review-meta,
+.review-card span,
+.review-card small {
+  color: #6b6b6b;
+}
+
+.review-stars {
+  color: #c9a24d;
+}
+
+/* ==================================================
+   Correção nos cards dos personagens secundários
+   ================================================== */
+
+/* Cards de "outros personagens" */
+.characters .character-card {
+  background-color: #ffffff;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Texto legível */
+.characters .character-card h3 {
+  color: #1f1f1f;
+}
+
+.characters .character-card p {
+  color: #4a4a4a;
+  font-size: 0.95rem;
+}
+
+/* ==================================================
+   QUOTE
+   ================================================== */
+
+/* Faixa verde full */
+
+.quote-section {
+  background-color: #002415; /* seu verde escuro */
+  padding: 6rem 0;
+}
+
+/* Tira quadrado interno */
+
+.quote-container {
+  background: none;
+  max-width: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Limita texto, não fundo */
+
+.quote-text {
+  max-width: 700px;
+  margin: 2rem auto;
+  color: #ffffff;
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+
+/* Centraliza e suaviza a estrela */
+
+.quote-divider {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+}
+
+/* Centraliza no mobile */
+
+@media (max-width: 768px) {
+  .quote-text {
+    text-align: center;
+  }
+
+  .quote-divider {
+    text-align: center;
+  }
+}
+
+
+/* ==================================================
+   ILUSTRAÇÕES UMA AO LADO DA OUTRA
+   ================================================== */
+
+.characters-illustration {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+/* Ajuste de tamanho das imagens */
+.characters-illustration img {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* Uma em cima da outra no mobile */
+@media (max-width: 768px) {
+  .characters-illustration {
+    flex-direction: column;
+  }
+}
+
+/* Blindagem */
+.characters-illustration {
+  flex-wrap: wrap;
+}
+
+/* Centraliza a frase no mobile */
+
+@media (max-width: 768px) {
+  .illustration-credit {
+    text-align: center;
+  }
+}
+
+
+/* ==================================================
+   CONTINENTE
+   ================================================== */
+
+/* Faixa verde full */
+
+.universe-section {
+  background-color: #002415; /* seu verde */
+  padding: 6rem 0;
+}
+
+/* Tira quadrado interno */
+
+.universe-section .container {
+  max-width: none;
+  padding: 0;
+}
+
+/* Limita texto, não fundo */
+
+.universe-section h2,
+.universe-section p {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Respiro bonito */
+
+.universe-section p {
+  margin-bottom: 4rem;
+}
+
+/* Centraliza e integra o mapa */
+
+.universe-map {
+  display: flex;
+  justify-content: center;
+}
+
+.universe-map img {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* ==================================================
+   CORREÇÃO CARD DA AUTORA - mais escuro
+   ================================================== */
+
+.author-card {
+  background-color: #f1efe9; /* bege levemente mais escuro */
+  border-radius: 24px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ==================================================
+   CORREÇÃO do quote no mobile
+   ================================================== */
+
+@media (max-width: 768px) {
+  .quote-section {
+    height: auto;
+    min-height: auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .quote-container {
+    height: auto;
+    overflow: visible;
+  }
+
+  .quote-text {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.6;
+    font-size: 1.2rem;
+  }
+}
+
+/* ==================================================
+   AJUSTES NA NAVBAR
+   ================================================== */
+
+/* Remove espaço branco no topo */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* ==================================================
+   CENTRALIZA NO MOBILE A SINOPSE
+   ================================================== */
+
+@media (max-width: 768px) {
+  .book-intro .book-content h2,
+  .book-intro .book-content p {
+    text-align: center;
+  }
+}
+
+/* ==================================================
+   CLOSE LINE
+   ================================================== */
+.closing-line {
+  text-align: center;
+}
+
+.closing-main {
+  display: block;
+}
+
+.closing-sub {
+  display: block;
+  opacity: 0.8;
+}
+
+/* ==================================================
+   UM CARD DE PERSONAGEM SECUNDÁRIO POR LINHA NO MOBILE
+   ================================================== */
+
+@media (max-width: 768px) {
+  .character-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .character-card {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
+
+/* ==================================================
+   ESPAÇAMENTO NO ACOMPANHE NAS REDES
+   ================================================== */
+
+.cta-social h3 {
+  margin-bottom: 1.5rem;
+}
+
+.cta-social .social-buttons {
+  margin-bottom: 1.75rem;
+}
+
+.cta-social .closing-line {
+  line-height: 1.8;
+}
+
+.cta-social .closing-line {
+  margin-top: 2.5rem;
+}
+
+/* ==================================================
+   DIMINUIR PARTE BRANCA NOS CTAs
+   ================================================== */
+
+/* Lá em cima */
+
+.cta-reading {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.cta-reading h2 {
+  margin-bottom: 1.2rem;
+}
+
+.cta-reading p {
+  margin-bottom: 2rem;
+}
+
+/* Lá embaixo */
+
+/* Override do padding gigante da section */
+.buy-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Título e texto */
+.buy-section h2 {
+  margin-bottom: 1.2rem;
+}
+
+.buy-section > p {
+  margin-bottom: 1.5rem;
+}
+
+/* Prova social (estrelas) */
+.social-proof {
+  margin-bottom: 2.5rem;
+}
+
+/* Botões de compra */
+.buy-buttons {
+  margin-bottom: 3rem;
+}
+
+/* Redes sociais */
+.cta-social {
+  text-align: center;
+}
+
+.cta-social h3 {
+  margin-bottom: 1.8rem;
+}
+
+.social-buttons {
+  margin-bottom: 2.5rem;
+}
+
+/* Frase final */
+.closing-line {
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+/* ==================================================
+   FOTO DOS NARRADORES – MOBILE (CÍRCULO GARANTIDO)
+   ================================================== */
+
+@media (max-width: 768px) {
+  .character-card img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    max-width: none;
+  }
+}
+/* ==================================================
+   FOTO DA AUTORA NÃO APARECE
+   ================================================== */
+
+.author-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.5rem;
+}
+
+.author-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover;
+  display: block;
+}
