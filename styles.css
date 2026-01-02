@@ -2677,3 +2677,14 @@ html, body {
     height: 120px;
   }
 }
+/* FIX DEFINITIVO BOTÃO HEADER */
+.navbar-actions a,
+.nav-highlight {
+  height: auto;
+  min-height: 38px;
+  padding: 0.6rem 1.2rem;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
