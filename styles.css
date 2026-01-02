@@ -370,19 +370,6 @@ p {
   box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
-/* ==================================================
-   IMAGEM
-   ================================================== */
-
-.character-card img,
-.narrator-card img {
-  width: 100%;
-  max-width: 220px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
 
 /* ==================================================
    TEXTO — HIERARQUIA
@@ -441,9 +428,6 @@ p {
   padding: 1.5rem 1rem;
 }
 
-.character-grid .character-card img {
-  max-width: 140px;
-}
 
 .character-grid .character-card p {
   font-size: 0.9rem;
@@ -506,12 +490,6 @@ p {
     gap: 1.2rem;
   }
 }
-
-@media (max-width: 480px) {
-  .character-card img,
-  .narrator-card img {
-    max-width: 100px;
-  }
 
   .character-card p,
   .narrator-card p {
@@ -2672,20 +2650,30 @@ html, body {
 
 /* PERSONAGENS — FOTOS PERFEITAMENTE REDONDAS */
 
-.character-card img {
-  width: 160px;        /* controla o tamanho (menor que antes) */
-  height: 160px;       /* IGUAL à largura → círculo perfeito */
-  object-fit: cover;  /* corta sem distorcer */
+.character-card img,
+.narrator-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
   border-radius: 50%;
   display: block;
   margin: 0 auto 1.2rem;
 }
 
-@media (max-width: 480px) {
-  .character-card img {
+/* Tablet */
+@media (max-width: 768px) {
+  .character-card img,
+  .narrator-card img {
     width: 140px;
     height: 140px;
   }
 }
 
-
+/* Mobile */
+@media (max-width: 480px) {
+  .character-card img,
+  .narrator-card img {
+    width: 120px;
+    height: 120px;
+  }
+}
