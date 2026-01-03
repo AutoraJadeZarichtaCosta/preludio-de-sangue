@@ -2677,6 +2677,12 @@ html, body {
     height: 120px;
   }
 }
+/* Ajuste da navbar no mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding-bottom: 1.2rem;
+  }
+}
 /* FIX DEFINITIVO BOTÃO HEADER */
 .navbar-actions a,
 .nav-highlight {
