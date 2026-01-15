@@ -112,38 +112,62 @@
 </section>
 
 
-<!-- LEIA AGORA -->
-<section class="section light cta-reading" id="ler-agora">
-  <div class="container">
+<!-- BLOCO BOOKTRAILER + LEIA AGORA -->
+<section class="intro-grid">
 
-    <h2 class="cta-title">Comece a leitura agora</h2>
+  <!-- COLUNA 1: BOOKTRAILER -->
+  <div class="intro-video">
+    <section class="booktrailer">
+      <h2 class="cta-title">Confira o booktrailer</h2>
 
-    <div class="cta-divider"></div>
 
-    <p class="cta-text">
-      Caia junto com Kate no universo de <em>Prelúdio de Sangue</em>.
-    </p>
-
-    <div class="cta-buttons">
-      <a
-        href="https://drive.google.com/file/d/1hrqPqGtA1e7vbozW-nIYuwUCPP8v_j4k/view?usp=sharing"
-        target="_blank"
-        class="btn btn-secondary"
-      >
-        Leia os primeiros capítulos
-      </a>
-
-      <a
-        href="https://www.amazon.com.br/dp/B0F81F6RQW"
-        target="_blank"
-        class="btn btn-primary"
-      >
-        Leia pelo Kindle Unlimited
-      </a>
-    </div>
-    </div>
+      <div class="video-wrapper">
+        <video controls playsinline preload="metadata">
+          <source src="booktrailer.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+    </section>
   </div>
+
+  <!-- COLUNA 2: LEIA AGORA -->
+  <div class="intro-texto">
+    <section class="section light cta-reading" id="ler-agora">
+      <div class="container">
+
+        <h2 class="cta-title">Comece a leitura agora</h2>
+
+        <div class="cta-divider"></div>
+
+        <p class="cta-text">
+          Caia junto com Kate no universo de <em>Prelúdio de Sangue</em>.
+        </p>
+
+        <div class="cta-buttons">
+          <a
+            href="https://drive.google.com/file/d/1hrqPqGtA1e7vbozW-nIYuwUCPP8v_j4k/view?usp=sharing"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            Leia os primeiros capítulos
+          </a>
+
+          <a
+            href="https://www.amazon.com.br/dp/B0F81F6RQW"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            Leia pelo Kindle Unlimited
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
 </section>
+
+
 
 <!-- PERSONAGENS -->
 <section class="section dark characters-section centered" id="personagens">
@@ -305,9 +329,18 @@
 
     <h2>Ilustrações oficiais</h2>
 
-    <div class="characters-illustration">
-      <img src="images/characters-01.png" alt="Ilustração oficial dos personagens">
-      <img src="images/characters-02.jpg" alt="Ilustração oficial dos personagens">
+    <div class="art-carousel">
+
+      <button class="art-nav prev" aria-label="Anterior">&#10094;</button>
+
+      <div class="art-track" id="artTrack">
+        <img src="images/characters-01.png" alt="Ilustração oficial dos personagens">
+        <img src="images/characters-02.jpg" alt="Ilustração oficial dos personagens">
+        <img src="images/characters-03.png" alt="Ilustração oficial dos personagens">
+      </div>
+
+      <button class="art-nav next" aria-label="Próximo">&#10095;</button>
+
     </div>
 
     <p class="illustration-credit">
@@ -317,21 +350,44 @@
   </div>
 </section>
 
-<!-- UNIVERSO -->
+<!-- MAPA INTERATIVO -->
 <section class="section dark universe-section centered" id="universo">
   <div class="container">
+
     <h2 class="continent-title">O Continente</h2>
+
     <p>
       Um mundo de fronteiras rígidas e leis silenciosas, onde cada escolha tem um custo — e toda transgressão pode ser a última.
     </p>
 
-   <div class="universe-map">
-  <img src="images/mapa-continente.jpg" alt="Mapa do Continente">
-</div>
+    <div class="map-wrapper">
+
+      <img src="images/mapa-continente.jpg" alt="Mapa do Continente" class="mapa-img">
+
+      <!-- PONTOS CLICÁVEIS -->
+
+      <!-- CASTELO -->
+      <button class="map-point" style="top: 56%; left: 81%;" data-img="images/castelo.png" aria-label="Castelo"></button>
+
+     <!-- SOMBRIO + BAR (ABREM JUNTOS) -->
+     <button class="map-point"
+        style="top: 83.3%; left: 85.6%;"
+        data-imgs="images/sombrio.png,images/bar.png"
+        aria-label="Sombrio e Bar"></button>
+
 
     </div>
+
   </div>
 </section>
+
+<!-- MODAL -->
+<div id="map-modal" class="map-modal">
+  <div id="map-modal-content" class="map-modal-content">
+    <span class="map-close">&times;</span>
+  </div>
+</div>
+
 
 <!-- AUTORA -->
 <section class="section light author-section centered" id="autora">
@@ -366,11 +422,17 @@
         </p>
 
         <p>
-          Mora em Florianópolis–SC com o namorado e seus filhos peludos. Quando não está
+          Mora em Florianópolis, SC, com o namorado e seus filhos peludos. Quando não está
           atendendo, pode ser encontrada jogada no sofá, cercada pelos amores da sua vida,
           lendo ou escrevendo.
         </p>
       </div>
+
+<div class="cats-row">
+  <img src="images/ravena.jpg" alt="ravena" class="cat-photo">
+  <img src="images/luke.jpg" alt="luke" class="cat-photo">
+  <img src="images/mingo.jpg" alt="mingo" class="cat-photo">
+</div>
 
       <div class="author-social">
         <span>Acompanhe:</span>
@@ -1295,7 +1357,6 @@
 </section>
 
 
-
 <footer class="section dark footer">
   <div class="footer-content">
     <span>© 2025-2026 Jade Zarichta Costa</span>
@@ -1303,9 +1364,14 @@
 </footer>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ==========================
+     CONTROLE DE REVIEWS
+  ========================== */
+
   const reviews = document.querySelectorAll('.review-card');
   const loadMoreBtn = document.getElementById('loadMoreReviews');
-
   let visibleCount = 3;
 
   function showReviews() {
@@ -1313,7 +1379,7 @@
       reviews[i].style.display = 'flex';
     }
 
-    if (visibleCount >= reviews.length) {
+    if (visibleCount >= reviews.length && loadMoreBtn) {
       loadMoreBtn.style.display = 'none';
     }
   }
@@ -1326,6 +1392,134 @@
 
     showReviews();
   }
+
+  /* ==========================
+     MAPA INTERATIVO 
+  ========================== */
+
+  const mapPoints = document.querySelectorAll(".map-point");
+  const mapModal = document.getElementById("map-modal");
+  const mapModalContent = document.getElementById("map-modal-content");
+  const mapCloseBtn = document.querySelector(".map-close");
+
+  if (!mapPoints.length) {
+    console.warn("Nenhum ponto do mapa encontrado (.map-point)");
+  }
+
+  if (mapModal && mapModalContent && mapCloseBtn) {
+
+    mapPoints.forEach(point => {
+      point.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Limpa imagens anteriores
+        mapModalContent.querySelectorAll("img").forEach(img => img.remove());
+
+        const imgs = this.getAttribute("data-imgs");
+        const singleImg = this.getAttribute("data-img");
+
+        if (imgs) {
+          const imgArray = imgs.split(",");
+          imgArray.forEach(src => {
+            const img = document.createElement("img");
+            img.src = src.trim();
+            mapModalContent.appendChild(img);
+          });
+        } 
+        else if (singleImg) {
+          const img = document.createElement("img");
+          img.src = singleImg;
+          mapModalContent.appendChild(img);
+        } 
+        else {
+          console.warn("Este ponto não possui data-img nem data-imgs:", this);
+          return;
+        }
+
+        // Abre modal do mapa
+        mapModal.style.display = "flex";
+      });
+    });
+
+    mapCloseBtn.addEventListener("click", function () {
+      mapModal.style.display = "none";
+      mapModalContent.querySelectorAll("img").forEach(img => img.remove());
+    });
+
+    mapModal.addEventListener("click", function (e) {
+      if (e.target === mapModal) {
+        mapModal.style.display = "none";
+        mapModalContent.querySelectorAll("img").forEach(img => img.remove());
+      }
+    });
+
+  } else {
+    console.warn("Modal do mapa não encontrado.");
+  }
+
+  /* ==========================
+     ILUSTRAÇÕES – CARROSSEL
+  ========================== */
+
+  const track = document.getElementById("artTrack");
+  const prevBtn = document.querySelector(".art-nav.prev");
+  const nextBtn = document.querySelector(".art-nav.next");
+
+  if (track && prevBtn && nextBtn) {
+
+    function getTrackCenter() {
+      return track.scrollLeft + track.clientWidth / 2;
+    }
+
+    function getClosestImage() {
+      const images = track.querySelectorAll("img");
+      const center = getTrackCenter();
+
+      let closest = null;
+      let minDistance = Infinity;
+
+      images.forEach(img => {
+        const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+        const distance = Math.abs(center - imgCenter);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          closest = img;
+        }
+      });
+
+      return closest;
+    }
+
+    function scrollToImage(img) {
+      const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+      const target = imgCenter - track.clientWidth / 2;
+
+      track.scrollTo({
+        left: target,
+        behavior: "smooth"
+      });
+    }
+
+    nextBtn.addEventListener("click", () => {
+      const active = getClosestImage();
+      if (!active) return;
+      const next = active.nextElementSibling;
+      if (next) scrollToImage(next);
+    });
+
+    prevBtn.addEventListener("click", () => {
+      const active = getClosestImage();
+      if (!active) return;
+      const prev = active.previousElementSibling;
+      if (prev) scrollToImage(prev);
+    });
+  }
+  });
+
 </script>
 
+</body>
+
+</html>
 
